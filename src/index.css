@@ -3,14 +3,12 @@
 @theme {
   --font-sans: "Inter", sans-serif;
   
-  /* Your Custom Palette */
-  --color-cream: #F0E491;      /* Text & Highlights */
-  --color-olive: #BBC863;      /* Accents & Hovers */
-  --color-moss: #658C58;       /* Secondary / Borders */
-  --color-deep: #31694E;       /* Main Background */
+  /* Your Palette */
+  --color-beige: #DDD0C8;      /* Now the Main Background */
+  --color-dark: #323232;       /* Now the Main Text */
   
-  /* darker variant for depth */
-  --color-darker: #244f3b;     
+  /* Utility */
+  --color-white: #ffffff;
 }
 
 /* Global Styles */
@@ -19,25 +17,25 @@ html {
 }
 
 body {
-  background-color: var(--color-deep);
-  color: var(--color-cream);
+  background-color: var(--color-beige); /* Beige Background */
+  color: var(--color-dark);             /* Dark Text */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--color-olive);
-  color: var(--color-deep);
+  background: var(--color-dark);
+  color: var(--color-beige);
 }
 
-/* Hide scrollbar for cleaner look */
+/* Scrollbar adjusted for Light Mode */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-deep);
+  background: var(--color-beige);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-moss);
+  background: var(--color-dark);
   border-radius: 4px;
 }
