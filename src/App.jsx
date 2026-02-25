@@ -24,16 +24,17 @@ export default function Portfolio() {
         
         {/* --- NAVBAR --- */}
         <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-6 backdrop-blur-md bg-beige/80 border-b border-dark/5">
-          <div className="text-xl font-bold tracking-tighter text-dark flex items-center gap-1">
-            JAYANT<span className="text-dark/50">.</span>DEV
+          {/* Agency Logo */}
+          <div className="text-xl font-bold tracking-tighter text-dark flex items-center gap-1 uppercase">
+            Newresolution<span className="text-dark/50">Studio</span>
           </div>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <button 
                 onClick={() => scrollToSection('contact')}
                 className="hidden md:block px-6 py-2 rounded-full border border-dark/20 text-dark text-xs uppercase tracking-widest hover:bg-dark hover:text-beige transition-colors duration-300"
             >
-                Available for Work
+                Start a Project
             </button>
           </div>
         </nav>
@@ -41,7 +42,7 @@ export default function Portfolio() {
         {/* --- HERO SECTION --- */}
         <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-20 pt-20 overflow-hidden">
           
-          {/* Background Gradient - subtle dark blur on beige */}
+          {/* Background Gradient */}
           <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-dark/5 rounded-full blur-[120px] pointer-events-none" />
           
           <div className="max-w-6xl z-10">
@@ -49,11 +50,11 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="text-[13vw] md:text-[9rem] font-bold leading-[0.85] text-dark tracking-tighter mb-8"
+              className="text-[12vw] md:text-[8.5rem] font-bold leading-[0.85] text-dark tracking-tighter mb-8"
             >
               DIGITAL <br />
-              <span className="text-dark/80 font-serif italic pr-4">artisan</span> 
-              & DEV
+              <span className="text-dark/80 font-serif italic pr-4">experiences</span> 
+              & DESIGN
             </motion.h1>
 
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-t border-dark/10 pt-8 max-w-5xl">
@@ -63,7 +64,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.5 }}
                 className="text-lg md:text-xl text-dark/70 max-w-md leading-relaxed"
               >
-                I build pixel-perfect, engaging, and accessible digital experiences. Focusing on motion, UI architecture, and seamless performance.
+                We build pixel-perfect, engaging, and scalable digital platforms for forward-thinking brands. Bridging the gap between aesthetics and engineering.
               </motion.p>
               
               <motion.div 
@@ -73,7 +74,7 @@ export default function Portfolio() {
                  className="flex gap-4"
               >
                  <MagneticButton onClick={() => scrollToSection('work')} className="bg-dark text-beige hover:bg-white/80 hover:text-dark font-bold px-8">
-                    View Work
+                    Explore Work
                  </MagneticButton>
               </motion.div>
             </div>
@@ -93,21 +94,21 @@ export default function Portfolio() {
             <ProjectList />
         </section>
 
-        {/* --- SERVICES --- */}
+        {/* --- SERVICES (Agency Focused) --- */}
         <section className="py-24 px-6 md:px-20 bg-beige relative border-t border-dark/5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto items-center">
              <div>
-                <h2 className="text-dark text-4xl md:text-5xl mb-6 font-medium tracking-tight">How I can help</h2>
+                <h2 className="text-dark text-4xl md:text-5xl mb-6 font-medium tracking-tight">Our Expertise</h2>
                 <p className="text-dark/60 text-lg leading-relaxed mb-8">
-                   I don't just write code; I solve business problems through design-led engineering. Whether you need a high-converting landing page or a complex web app.
+                   We don't just write code; we solve business problems through design-led engineering. From high-converting landing pages to complex enterprise web applications, we deliver results.
                 </p>
-                <MagneticButton className="border border-dark/20 text-dark hover:bg-dark hover:text-beige">My Process</MagneticButton>
+                <MagneticButton className="border border-dark/20 text-dark hover:bg-dark hover:text-beige">Our Methodology</MagneticButton>
              </div>
              <div className="space-y-4">
                 {[
-                   { title: "Frontend Engineering", desc: "React, Tailwind, Framer Motion", icon: <Code /> },
-                   { title: "Interaction Design", desc: "Micro-interactions, WebGL", icon: <Layers /> },
-                   { title: "Performance Tuning", desc: "SEO, Core Web Vitals, Speed", icon: <Zap /> }
+                   { title: "Web Architecture", desc: "Custom React & Next.js development for scalable, future-proof platforms.", icon: <Code /> },
+                   { title: "Digital Design", desc: "UI/UX, prototyping, and micro-interactions that elevate brand identity.", icon: <Layers /> },
+                   { title: "Growth & Performance", desc: "Technical SEO, Core Web Vitals optimization, and conversion-focused layouts.", icon: <Zap /> }
                 ].map((s, i) => (
                    <motion.div 
                       key={i} 
@@ -128,27 +129,27 @@ export default function Portfolio() {
         {/* --- CONTACT SECTION --- */}
         <section id="contact" className="py-32 px-6 bg-beige relative">
             <div className="max-w-4xl mx-auto text-center">
-                <span className="text-dark/40 font-mono text-sm tracking-widest uppercase mb-4 block">What's Next?</span>
-                <h2 className="text-dark text-5xl md:text-7xl font-bold mb-10">Let's work together.</h2>
+                <span className="text-dark/40 font-mono text-sm tracking-widest uppercase mb-4 block">Ready to scale?</span>
+                <h2 className="text-dark text-5xl md:text-7xl font-bold mb-10">Let's build together.</h2>
                 
-                {/* Form - Dark borders on Beige */}
+                {/* Form */}
                 <form className="max-w-lg mx-auto space-y-4 mb-12 text-left">
                     <div className="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Name" className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30" />
-                        <input type="email" placeholder="Email" className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30" />
+                        <input type="text" placeholder="Name / Company" className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30" />
+                        <input type="email" placeholder="Work Email" className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30" />
                     </div>
-                    <textarea rows="4" placeholder="Tell me about your project..." className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30"></textarea>
-                    <button type="submit" className="w-full bg-dark text-beige font-bold p-4 rounded-none hover:bg-dark/80 transition-colors uppercase tracking-widest text-sm">Send Message</button>
+                    <textarea rows="4" placeholder="Tell us about your project, timeline, and goals..." className="w-full bg-transparent border border-dark/20 rounded-none p-4 text-dark focus:outline-none focus:border-dark focus:bg-dark/5 transition-all placeholder:text-dark/30"></textarea>
+                    <button type="submit" className="w-full bg-dark text-beige font-bold p-4 rounded-none hover:bg-dark/80 transition-colors uppercase tracking-widest text-sm">Submit Inquiry</button>
                 </form>
 
                 <div className="flex justify-center gap-8 text-dark/40">
                     <a href="#" className="hover:text-dark transition-colors"><Github /></a>
                     <a href="#" className="hover:text-dark transition-colors"><Linkedin /></a>
                     <a href="#" className="hover:text-dark transition-colors"><Twitter /></a>
-                    <a href="mailto:hello@example.com" className="hover:text-dark transition-colors"><Mail /></a>
+                    <a href="mailto:hello@newresolutionstudio.com" className="hover:text-dark transition-colors"><Mail /></a>
                 </div>
                 
-                <p className="mt-12 text-dark/30 text-sm">© 2026 Jayant Kumar. All Rights Reserved.</p>
+                <p className="mt-12 text-dark/30 text-sm">© {new Date().getFullYear()} Newresolution Studio. All Rights Reserved.</p>
             </div>
         </section>
 

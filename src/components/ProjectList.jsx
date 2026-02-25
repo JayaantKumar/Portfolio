@@ -12,7 +12,7 @@ const projects = [
     src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop", 
     desc: "A comprehensive gaming hub offering reviews, downloads, and community features.",
     year: "2024",
-    link: "https://www.gamepatty.com/"
+    link: "https://www.gamepatty.com/" // (Keeping this in data just in case you need it later)
   },
   {
     id: 2,
@@ -95,7 +95,7 @@ export default function ProjectList() {
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-white/90 p-3 text-dark text-xs font-mono uppercase tracking-widest text-center border-t border-dark/10">
-                 Click to view
+                 Click to view case study
               </div>
             </motion.div>
           )}
@@ -111,19 +111,20 @@ export default function ProjectList() {
 
         <div className="flex flex-col space-y-4">
           {projects.map((project) => (
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            /* Using Link to route to the Case Study page dynamically */
+            <Link
+              to={`/project/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              onMouseEnter={() => setActiveProject(project.id)}
-              onMouseLeave={() => setActiveProject(null)}
               className="group/item relative block"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between py-8 md:py-10 border-b border-dark/10 hover:border-dark transition-colors cursor-pointer bg-transparent hover:bg-dark/5 px-4 md:px-6 rounded-lg">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                onMouseEnter={() => setActiveProject(project.id)}
+                onMouseLeave={() => setActiveProject(null)}
+                className="flex flex-col md:flex-row md:items-center justify-between py-8 md:py-10 border-b border-dark/10 hover:border-dark transition-colors cursor-pointer bg-transparent hover:bg-dark/5 px-4 md:px-6 rounded-lg"
+              >
                 
                 {/* Text Content */}
                 <div className="md:w-1/2 transition-transform duration-500 group-hover/item:translate-x-4 z-20">
@@ -147,8 +148,8 @@ export default function ProjectList() {
                      <ArrowUpRight className="group-hover/item:rotate-45 transition-transform duration-300" size={20} />
                   </div>
                 </div>
-              </div>
-            </motion.a>
+              </motion.div>
+            </Link>
           ))}
         </div>
         

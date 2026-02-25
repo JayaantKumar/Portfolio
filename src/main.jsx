@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App.jsx'
-import Archives from './components/Archives.jsx' // Import the new file
+import Archives from './components/Archives.jsx'
+import CaseStudy from './components/CaseStudy.jsx' // NEW
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/archive" element={<Archives />} />
+        <Route path="/project/:id" element={<CaseStudy />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
